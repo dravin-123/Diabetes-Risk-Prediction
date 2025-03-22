@@ -67,6 +67,8 @@ def categorize_risk(risk_percentage):
     else:
         return "High Risk"
 
+risk_percentage = model.predict_proba(user_input)[0][1] * 100  # Example prediction logic
+
 risk_category = categorize_risk(risk_percentage)
 
 st.write(f"### Risk Percentage: {risk_percentage:.2f}%")
