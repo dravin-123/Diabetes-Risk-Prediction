@@ -56,7 +56,7 @@ age = st.number_input("Age", min_value=0, step=1)
 if st.button("Predict Risk"):
     user_input = np.array([[pregnancies, glucose, blood_pressure, bmi, age]])
     
-    risk_percentage = model.predict_proba(input_data)[0][1] * 100
+    risk_percentage = model.predict_proba(user_input)[0][1] * 100
 
     st.success(f"Your predicted diabetes risk is **{risk_percentage:.2f}%**")
 
