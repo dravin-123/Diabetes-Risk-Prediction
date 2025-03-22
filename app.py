@@ -54,7 +54,7 @@ bmi = st.number_input("BMI", min_value=0.0, format="%.1f")
 age = st.number_input("Age", min_value=0, step=1)
 
 if st.button("Predict Risk"):
-    input_data = np.array([[pregnancies, glucose, blood_pressure, bmi, age]])
+    user_input = np.array([[pregnancies, glucose, blood_pressure, bmi, age]])
     
     risk_percentage = model.predict_proba(input_data)[0][1] * 100
 
