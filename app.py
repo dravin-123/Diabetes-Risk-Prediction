@@ -69,14 +69,8 @@ def categorize_risk(risk_percentage):
         return "High Risk"
 
 import numpy as np
-import pickle
 
-
-with open("diabetes_model.pkl", "rb") as file:
-    model = pickle.load(file)
-
-
-user_input = np.array(user_input).reshape(1, -1)  
+user_input = np.array([[pregnancies, glucose, blood_pressure, bmi, age]]).reshape(1, -1)  
 
 risk_percentage = model.predict_proba(user_input)[0][1] * 100  # Convert to percentage
 
